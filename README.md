@@ -9,12 +9,16 @@
 
 # Configuration
 
-## web-python/application.cfg
+### web-python/application.cfg
 
     DSE_CLUSTER=IP_ADDRESS_OF_NODE
     DSE_SOLR_DC=NAME_OF_SOLR_DC
 
-## seeding/seed.py
+### seeding/seed.py
+    
+    ip_addresses = 'IP_ADDRESS_OF_NODE'
+    
+### seeding/stream.py
     
     ip_addresses = 'IP_ADDRESS_OF_NODE'
 
