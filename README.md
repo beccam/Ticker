@@ -22,8 +22,17 @@
     
     ip_addresses = 'IP_ADDRESS_OF_NODE'
 
+
+
 # Create Schema
-    
+
+### Configure Replication
+    CREATE KEYSPACE ticker WITH replication = {
+      'class': 'NetworkTopologyStrategy',
+      'NAME_OF_DC': '1',
+    };
+
+### Setup Schema
     cqlsh -f cql/ticker.cql
     
 # Setup Solr Core
@@ -32,13 +41,15 @@
     
 # Seed Data
 
-    chmod +x seeding/seed.py
-    python seeding/seed.py
+    cd seeding
+    chmod +x seed.py
+    python seed.py
     
 # Stream Data
     
-    chmod +x seeding/stream.py
-    nohup python seeding/stream.py &
+    cd seeding
+    chmod +x stream.py
+    nohup python stream.py &
     
 # Start the Application
 
