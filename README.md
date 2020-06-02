@@ -9,43 +9,42 @@
 
 # Configuration
 
-### web-python/application.cfg
+* web-python/application.cfg
 
     DSE_CLUSTER=IP_ADDRESS_OF_NODE
     DSE_SOLR_DC=NAME_OF_SOLR_DC
 
-### seeding/seed.py
+* seeding/seed.py
     
     ip_addresses = 'IP_ADDRESS_OF_NODE'
     
-### seeding/stream.py
+* seeding/stream.py
     
     ip_addresses = 'IP_ADDRESS_OF_NODE'
 
-
-
-# Create Schema
-
-### Configure Replication
+* Configure Replication
     CREATE KEYSPACE ticker WITH replication = {
       'class': 'NetworkTopologyStrategy',
       'NAME_OF_DC': '1',
     };
 
-### Setup Schema
+*  Setup Schema
+
     cqlsh -f cql/ticker.cql
     
-# Setup Solr Core
+* Setup Solr Core
     
     dsetool -h IP_ADDRESS_SOLR create_core ticker.latest generateResources=true
     
-# Seed Data
+# Begin streaming data    
+    
+* Seed Data
 
     cd seeding
     chmod +x seed.py
     python seed.py
     
-# Stream Data
+* Stream Data
     
     cd seeding
     chmod +x stream.py
