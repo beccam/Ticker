@@ -1,4 +1,4 @@
-# Dependencies hello
+# Dependencies 
     apt-get install python-pip
     apt-get install python-dev
     apt-get install build-essential
@@ -7,7 +7,7 @@
     pip install blist
     pip install cassandra-driver
 
-# Configurationn
+# Configuration
 
 * web-python/application.cfg
 
