@@ -7,7 +7,7 @@
     pip install blist
     pip install cassandra-driver
 
-# Configuration
+# Configurationn
 
 * web-python/application.cfg
 
